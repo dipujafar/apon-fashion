@@ -1,4 +1,40 @@
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/images/logo1.jfif";
 const Navbar = () => {
+  const navLinks = (
+    <>
+      <li className="text-lg font-medium">
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "bg-orange-400" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li className="text-lg font-medium">
+        <NavLink
+          to="/addProduct"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "bg-orange-400" : ""
+          }
+        >
+          Add Product
+        </NavLink>
+      </li>
+      <li className="text-lg font-medium">
+        <NavLink
+          to="/myCart"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "bg-orange-400" : ""
+          }
+        >
+          My Cart
+        </NavLink>
+      </li>
+    </>
+  );
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -24,52 +60,23 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <div className="flex flex-col items-center">
+            <img src={logo} alt="" className="w-24" />
+            <a className="italic text-orange-400 text-sm font-medium">
+              APON Fashion
+            </a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <button className="btn btn-sm btn-outline btn-warning">
+            <Link to="/login">Login</Link>
+          </button>
         </div>
       </div>
     </div>

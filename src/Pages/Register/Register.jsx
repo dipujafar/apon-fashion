@@ -108,7 +108,7 @@ const Register = () => {
             </label>
             <input
               type={show ? "text" : "password"}
-              name={show ? "text" : "password"}
+              name="password"
               id=""
               placeholder="Password"
               required
