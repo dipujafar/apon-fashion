@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
       </div>
       <h2 className="text-center text-2xl text-orange-400 mt-5">
-        AOPN Fashion House's Stylish World of Attire.....
+        AOPN Fashion House Stylish World of Attire.....
       </h2>
       <div className="flex gap-5 text-2xl justify-center mt-4">
         <FaFacebook></FaFacebook>
