@@ -14,7 +14,7 @@ const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loding, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -52,6 +52,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     singInUser,
     logOutUser,
+    loading,
   };
   return (
     <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>
