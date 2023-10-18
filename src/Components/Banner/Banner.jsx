@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div>
       <div
-        className="hero  md:h-[400px]"
+        className="hero  md:h-[500px]"
         style={{
           backgroundImage: "url(https://i.ibb.co/FqJpwgQ/fashion1.jpg)",
         }}
@@ -20,7 +20,7 @@ const Banner = () => {
                 sense with confidence and grace.
               </p>
             </div>
-            <div className="hidden md:inline  ">
+            <div className="hidden md:inline ">
               <img
                 src="https://i.ibb.co/t3YBh9L/istockphoto-1193750118-612x612-removebg-preview.png"
                 alt=""
