@@ -20,7 +20,7 @@ const Banner = () => {
                 sense with confidence and grace.
               </p>
             </div>
-            <div className="hidden md:inline ">
+            <div className="hidden lg:inline ">
               <img
                 src="https://i.ibb.co/t3YBh9L/istockphoto-1193750118-612x612-removebg-preview.png"
                 alt=""
