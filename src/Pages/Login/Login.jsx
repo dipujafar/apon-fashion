@@ -4,7 +4,7 @@ import { BsGoogle } from "react-icons/bs";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -12,19 +12,21 @@ const Login = () => {
   const { singInWithGoogle, singInUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [show, setShow] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     setError("");
     //singIn user
     singInUser(email, password)
       .then(() => {
         toast("successfully login");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setError(error.message));
   };
@@ -34,6 +36,7 @@ const Login = () => {
     singInWithGoogle()
       .then(() => {
         toast.success("Success Login with Google");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         setError(error.message);
@@ -95,9 +98,9 @@ const Login = () => {
             <legend className="text-center text-xl text-orange-400">
               LOGIN WITH
             </legend>
-            <button onClick={handleGoogleSing}>
-              <BsGoogle className="text-2xl text-blue-500"></BsGoogle>
-            </button>
+            <p onClick={handleGoogleSing}>
+              <BsGoogle className="text-2xl text-blue-500 cursor-pointer"></BsGoogle>
+            </p>
           </fieldset>
         </form>
       </div>

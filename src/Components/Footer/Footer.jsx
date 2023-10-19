@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className="md:mr-20 text-center">
           <h3 className="text-2xl  font-medium text-orange-400">Email</h3>
-          <p>aponeventfeni@gmal.com</p>
+          <p>aponfashionfeni@gmal.com</p>
         </div>
       </div>
       <h2 className="text-center text-2xl text-orange-400 mt-5">

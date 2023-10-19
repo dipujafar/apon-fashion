@@ -138,9 +138,9 @@ const Register = () => {
             <legend className="text-center text-xl text-orange-400">
               LOGIN WITH
             </legend>
-            <button onClick={handleGoogleSing}>
-              <BsGoogle className="text-2xl text-blue-500"></BsGoogle>
-            </button>
+            <p onClick={handleGoogleSing}>
+              <BsGoogle className="text-2xl text-blue-500 cursor-pointer"></BsGoogle>
+            </p>
           </fieldset>
         </form>
       </div>
