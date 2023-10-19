@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const { photo, rating, name, brandName, type, price } = product || {};
-  console.log(parseInt(rating));
 
   return (
     <div className="card lg:max-h-72 lg:card-side bg-base-100 shadow-xl">
@@ -23,9 +23,11 @@ const Product = ({ product }) => {
             </div>
           </div>
           <div>
-            <button className="btn btn-outline btn-warning mb-4 mr-2">
-              Details
-            </button>
+            <Link to={`/details/${product._id}`}>
+              <button className="btn btn-outline btn-warning mb-4 mr-2">
+                Details
+              </button>
+            </Link>
             <button className="btn btn-outline btn-warning">Update</button>
           </div>
         </div>
