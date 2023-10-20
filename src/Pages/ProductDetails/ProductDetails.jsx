@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { BiDollar } from "react-icons/bi";
 
 const ProductDetails = () => {
   const productData = useLoaderData();
@@ -26,7 +27,10 @@ const ProductDetails = () => {
           </h2>
           <p className="text-xl font-medium">Brand: {brandName}</p>
           <p className="text-xl font-medium">Product Type: {type}</p>
-          <p className="text-xl font-medium">Price: {price}</p>
+          <p className="text-xl font-medium flex items-center">
+            Price:
+            <BiDollar className="text-2xl"></BiDollar> {price}
+          </p>
           <p className="text-xl text-gray-700">{description}</p>
           <div className="card-actions justify-end">
             <div className="badge badge-outline">Add Card</div>

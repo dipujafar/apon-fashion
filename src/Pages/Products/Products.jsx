@@ -14,7 +14,6 @@ const Products = () => {
     );
     setProducts(filteredProducts);
   }, [loadedProducts, brandName]);
-  console.log(products);
   return (
     <div className="mt-10 min-h-screen">
       <h1 className="text-3xl text-center mb-5 text-orange-400 font-medium">

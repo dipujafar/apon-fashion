@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+import { BiDollar } from "react-icons/bi";
 
 const Product = ({ product }) => {
   const { photo, rating, name, brandName, type, price } = product || {};
-
   return (
     <div className="card lg:max-h-72 lg:card-side bg-base-100 shadow-xl">
       <figure>
@@ -18,7 +18,10 @@ const Product = ({ product }) => {
             <div className="space-y-2">
               <p className="text-xl">Band Name: {brandName}</p>
               <p className="text-xl">Product Type: {type}</p>
-              <p className="text-xl">Price: {price}</p>
+              <p className="text-xl flex items-center">
+                Price: <BiDollar className="text-2xl"></BiDollar>
+                {price}
+              </p>
               <Rating style={{ maxWidth: 250 }} value={parseInt(rating)} />
             </div>
           </div>
@@ -28,7 +31,9 @@ const Product = ({ product }) => {
                 Details
               </button>
             </Link>
-            <button className="btn btn-outline btn-warning">Update</button>
+            <Link to={`/update/${product._id}`}>
+              <button className="btn btn-outline btn-warning">Update</button>
+            </Link>
           </div>
         </div>
       </div>
