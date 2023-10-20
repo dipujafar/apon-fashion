@@ -9,11 +9,11 @@ const Product = ({ product }) => {
   return (
     <div className="card lg:max-h-72 lg:card-side bg-base-100 shadow-xl">
       <figure>
-        <img src={photo} alt="product_image" className="w-80" />
+        <img src={photo} alt="product_image" className="w-80 h-full" />
       </figure>
       <div className="card-body">
         <div className="md:flex items-center gap-2">
-          <div className="mb-4">
+          <div className="mb-4 md:w-11/12">
             <h2 className="text-2xl font-medium mb-3">{name}</h2>
             <div className="space-y-2">
               <p className="text-xl">Band Name: {brandName}</p>
@@ -22,7 +22,7 @@ const Product = ({ product }) => {
                 Price: <BiDollar className="text-2xl"></BiDollar>
                 {price}
               </p>
-              <Rating style={{ maxWidth: 250 }} value={parseInt(rating)} />
+              <Rating style={{ maxWidth: 100 }} value={parseInt(rating)} />
             </div>
           </div>
           <div>

@@ -1,11 +1,38 @@
 import { useLoaderData } from "react-router-dom";
 import { BiDollar } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const productData = useLoaderData();
-  const { photo, name, brandName, type, price, description } =
+  const { photo, name, brandName, type, price, description, rating } =
     productData || {};
-  console.log(productData);
+
+  const cartProduct = {
+    photo,
+    name,
+    brandName,
+    type,
+    price,
+    description,
+    rating,
+  };
+
+  //product data save database
+  const handleAddCart = () => {
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Successfully added in cart");
+        }
+      });
+  };
   return (
     <div className="mt-10">
       <div className="h-20 bg-gray-800 rounded">
@@ -33,7 +60,9 @@ const ProductDetails = () => {
           </p>
           <p className="text-xl text-gray-700">{description}</p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">Add Card</div>
+            <button onClick={handleAddCart}>
+              <div className="badge badge-outline text-green-800">Add Card</div>
+            </button>
           </div>
         </div>
       </div>

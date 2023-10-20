@@ -41,7 +41,7 @@ const Navbar = () => {
       </li>
       <li className="text-lg font-medium">
         <NavLink
-          to="/myCart"
+          to="/cart"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "bg-orange-400" : ""
           }
@@ -80,7 +80,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex flex-col items-center">
-            <img src={logo} alt="" className="w-24" />
+            <img src={logo} alt="logo_image" className="w-24" />
             <a className="italic text-orange-400 text-sm font-medium">
               APON Fashion
             </a>
