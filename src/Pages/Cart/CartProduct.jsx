@@ -2,38 +2,9 @@ import { Rating } from "@smastrom/react-rating";
 import PropTypes from "prop-types";
 import { BiDollar } from "react-icons/bi";
 import { RiDeleteBin2Line } from "react-icons/ri";
-import Swal from "sweetalert2";
-const CartProduct = ({ product }) => {
+const CartProduct = ({ product, handleDelete }) => {
   const { _id, photo, name, brandName, type, price, description, rating } =
     product || {};
-
-  const handleDelete = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be delete this product!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
-              Swal.fire(
-                "Deleted!",
-                "This Product has been deleted.",
-                "success"
-              );
-            }
-          });
-      }
-    });
-  };
 
   return (
     <div className="card  bg-base-100 shadow-xl shadow-orange-100">
@@ -66,6 +37,7 @@ const CartProduct = ({ product }) => {
 };
 CartProduct.propTypes = {
   product: PropTypes.object,
+  handleDelete: PropTypes.func,
 };
 
 export default CartProduct;

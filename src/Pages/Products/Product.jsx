@@ -7,7 +7,7 @@ import { BiDollar } from "react-icons/bi";
 const Product = ({ product }) => {
   const { photo, rating, name, brandName, type, price } = product || {};
   return (
-    <div className="card lg:max-h-72 lg:card-side bg-base-100 shadow-xl">
+    <div className="card lg:max-h-72 lg:card-side bg-base-100 shadow-xl shadow-orange-100">
       <figure>
         <img src={photo} alt="product_image" className="w-80 h-full" />
       </figure>

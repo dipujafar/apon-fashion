@@ -19,7 +19,7 @@ const ProductDetails = () => {
 
   //product data save database
   const handleAddCart = () => {
-    fetch("http://localhost:5000/cart", {
+    fetch("https://apon-fashion2.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -35,12 +35,12 @@ const ProductDetails = () => {
   };
   return (
     <div className="mt-10">
-      <div className="h-20 bg-gray-800 rounded">
+      <div className="h-20 bg-gray-800 shadow-xl shadow-orange-100 rounded">
         <h1 className="text-center font-semibold text-sky-500 text-4xl py-3">
           Product Details
         </h1>
       </div>
-      <div className="card  bg-base-100 shadow-xl">
+      <div className="card  bg-base-100 shadow-xl shadow-orange-100">
         <figure>
           <img
             src={photo}

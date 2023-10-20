@@ -43,7 +43,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="mt-5 md:mt-20 ">
+    <div className="mt-5 md:mt-20 min-h-screen">
       <div className="md:w-2/6 mx-auto border bg-gray-950 rounded shadow-lg shadow-gray-200 p-5">
         <h1 className="text-2xl font-medium mb-5 text-orange-400">
           LOGIN TO APON FASHION

@@ -24,7 +24,7 @@ const AddProduct = () => {
     console.log(product);
 
     // data post
-    fetch("http://localhost:5000/products", {
+    fetch("https://apon-fashion2.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

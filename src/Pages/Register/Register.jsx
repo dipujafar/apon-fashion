@@ -7,14 +7,18 @@ import {
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { BsGoogle } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../../Firebase/firebase.config";
 const Register = () => {
   const { singInWithGoogle, createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [show, setShow] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -42,7 +46,17 @@ const Register = () => {
     //create user
     createUser(email, password)
       .then(() => {
-        toast("Successfully Create User");
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            toast("Successfully Create User");
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
       })
       .catch((error) => setError(error.message));
   };
@@ -58,7 +72,7 @@ const Register = () => {
       });
   };
   return (
-    <div className="mt-5 md:mt-20 ">
+    <div className="mt-5 md:mt-20 max-h-screen">
       <div className="md:w-2/6 mx-auto border bg-gray-950 rounded shadow-lg shadow-gray-200 p-5">
         <h1 className="text-2xl font-medium mb-5 text-orange-400">
           REGISTER TO APON FASHION

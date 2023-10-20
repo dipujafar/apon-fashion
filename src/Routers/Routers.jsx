@@ -38,7 +38,7 @@ const routers = createBrowserRouter([
       {
         path: "/products/:brandName",
         element: <Products></Products>,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://apon-fashion2.vercel.app/products"),
       },
       {
         path: "/details/:id",
@@ -48,7 +48,7 @@ const routers = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://apon-fashion2.vercel.app/products/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -58,7 +58,7 @@ const routers = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://apon-fashion2.vercel.app/products/${params.id}`),
       },
       {
         path: "/cart",
@@ -67,7 +67,7 @@ const routers = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/cart`),
+        loader: () => fetch(`https://apon-fashion2.vercel.app/cart`),
       },
     ],
   },

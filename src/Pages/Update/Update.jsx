@@ -27,7 +27,7 @@ const Update = () => {
     };
 
     // data post
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://apon-fashion2.vercel.app/products/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -1,10 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/images/logo1.jfif";
+import logo from "../../assets/images/apon-logo-1.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import profile from "../../assets/images/user.png";
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
+  console.log(user);
 
   //logout function
   const handleLogout = () => {
@@ -91,12 +93,19 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button
-              onClick={handleLogout}
-              className="btn btn-sm btn-outline btn-warning"
-            >
-              Logout
-            </button>
+            <div>
+              {user.photoURL ? (
+                <img src={user.photoURL} alt="" className="w-10 rounded-full" />
+              ) : (
+                <img src={profile} alt="" className="w-10 rounded-full" />
+              )}
+              <button
+                onClick={handleLogout}
+                className="btn btn-sm btn-outline btn-warning"
+              >
+                Logout
+              </button>
+            </div>
           ) : (
             <button className="btn btn-sm btn-outline btn-warning">
               <Link to="/login">Login</Link>
