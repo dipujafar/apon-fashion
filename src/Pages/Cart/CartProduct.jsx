@@ -5,7 +5,6 @@ import { RiDeleteBin2Line } from "react-icons/ri";
 const CartProduct = ({ product, handleDelete }) => {
   const { _id, photo, name, brandName, type, price, description, rating } =
     product || {};
-
   return (
     <div className="card  bg-base-100 shadow-xl shadow-orange-100">
       <figure className="px-10 pt-10 md:max-h-72">

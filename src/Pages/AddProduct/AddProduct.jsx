@@ -41,7 +41,7 @@ const AddProduct = () => {
   };
   return (
     <div className="mt-10">
-      <div className="bg-gray-950 p-2 md:p-5 rounded-lg  min-h-screen">
+      <div className="bg-gray-200 p-2 md:p-5 rounded-lg  min-h-screen shadow-xl shadow-gray-900">
         <h1 className="text-3xl font-medium text-center mb-5">ADD A PRODUCT</h1>
         <form onSubmit={handleAddProduct} className="p-2 w-11/12 mx-auto">
           {/* input type and price name */}

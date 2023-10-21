@@ -14,7 +14,7 @@ const Banner = () => {
               <h1 className="mb-5 text-5xl text-orange-400 font-bold">
                 Apon Fashion
               </h1>
-              <p className="mb-5 text-xl text-gray-800">
+              <p className="mb-5 text-xl text-gray-200">
                 Apon Fashion House offers a meticulously curated selection of
                 stylish apparel, allowing you to express your unique fashion
                 sense with confidence and grace.

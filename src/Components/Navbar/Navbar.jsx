@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import profile from "../../assets/images/user.png";
 const Navbar = () => {
-  const { user, logOutUser } = useContext(AuthContext);
+  const { user, logOutUser, show, setShow } = useContext(AuthContext);
   console.log(user);
 
   //logout function
@@ -83,7 +83,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col items-center">
             <img src={logo} alt="logo_image" className="w-24" />
-            <a className="italic text-orange-400 text-sm font-medium">
+            <a className="italic text-orange-400 text-sm md:font-medium">
               APON Fashion
             </a>
           </div>
@@ -93,18 +93,43 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div>
+            <div
+              onClick={() => setShow(!show)}
+              className="cursor-pointer relative"
+            >
               {user.photoURL ? (
                 <img src={user.photoURL} alt="" className="w-10 rounded-full" />
               ) : (
                 <img src={profile} alt="" className="w-10 rounded-full" />
               )}
-              <button
-                onClick={handleLogout}
-                className="btn btn-sm btn-outline btn-warning"
+              <div
+                className={`absolute top-14 right-0 bg-blue-100 rounded space-y-2 py-4 w-52 items-center justify-center z-10    ${
+                  show || " -top-60 "
+                }`}
               >
-                Logout
-              </button>
+                <div className="flex justify-center">
+                  {user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt=""
+                      className="w-16 rounded-full"
+                    />
+                  ) : (
+                    <img src={profile} alt="" className="w-16 rounded-full" />
+                  )}
+                </div>
+                <h1 className=" text-xl text-orange-400 flex justify-center">
+                  {user.displayName}
+                </h1>
+                <div className="flex justify-center">
+                  <button
+                    onClick={handleLogout}
+                    className="btn btn-sm btn-outline btn-warning"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
             <button className="btn btn-sm btn-outline btn-warning">

@@ -14,7 +14,7 @@ const Brand = ({ brand }) => {
           <h2 className="text-4xl text-center font-medium text-sky-400">
             {brandName}
           </h2>
-          <p className="text-2xl text-gray-700">
+          <p className="text-2xl text-gray-200">
             It's quality standards brand and quality products is here.
           </p>
         </div>

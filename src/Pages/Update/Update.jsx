@@ -45,7 +45,7 @@ const Update = () => {
   };
   return (
     <div className="mt-10">
-      <div className="bg-gray-950 p-2 md:p-5 rounded-lg  ">
+      <div className="bg-gray-200 p-2 md:p-5 rounded-lg shadow-xl shadow-gray-900 ">
         <h1 className="text-3xl font-medium text-center mb-5">
           UPDATE PRODUCT
         </h1>

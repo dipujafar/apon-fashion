@@ -73,7 +73,7 @@ const Register = () => {
   };
   return (
     <div className="mt-5 md:mt-20 max-h-screen">
-      <div className="md:w-2/6 mx-auto border bg-gray-950 rounded shadow-lg shadow-gray-200 p-5">
+      <div className="md:w-2/6 mx-auto border bg-gray-200 rounded shadow-xl shadow-gray-900 p-5">
         <h1 className="text-2xl font-medium mb-5 text-orange-400">
           REGISTER TO APON FASHION
         </h1>
