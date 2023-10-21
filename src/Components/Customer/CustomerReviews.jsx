@@ -9,7 +9,7 @@ const CustomerReviews = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <div className="mt-10 bg-gray-100 pt-4">
+    <div className="mt-10 bg-gray-100 rounded pt-4">
       <h1
         className="text-center text-4xl text-orange-400 mb-5"
         data-aos="fade-down"

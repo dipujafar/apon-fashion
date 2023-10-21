@@ -74,7 +74,12 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <h1 className="text-3xl text-center mb-5 text-orange-400 font-medium">
+      <h1
+        className="text-3xl text-center mb-5 text-orange-400 font-medium"
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         {products.length ? `${brandName} Available Products` : ""}
       </h1>
       <div>

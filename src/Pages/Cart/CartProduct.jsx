@@ -6,7 +6,12 @@ const CartProduct = ({ product, handleDelete }) => {
   const { _id, photo, name, brandName, type, price, description, rating } =
     product || {};
   return (
-    <div className="card  bg-base-100 shadow-xl shadow-orange-100">
+    <div
+      className="card  bg-base-100 shadow-xl shadow-orange-100"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
       <figure className="px-10 pt-10 md:max-h-72">
         <img src={photo} alt="brand_image" className="rounded-xl h-full" />
       </figure>
