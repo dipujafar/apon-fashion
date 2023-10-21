@@ -10,7 +10,11 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-80"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="flex items-center justify-between">
-            <div className="max-w-md ">
+            <div
+              className="max-w-md "
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <h1 className="mb-5 text-5xl text-orange-400 font-bold">
                 Apon Fashion
               </h1>

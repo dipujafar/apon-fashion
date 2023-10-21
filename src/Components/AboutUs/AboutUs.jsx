@@ -2,7 +2,12 @@
 const AboutUs = () => {
   return (
     <div>
-      <div className="mt-10">
+      <div
+        className="mt-10"
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         <div className="hero min-h-16 bg-gray-200 rounded">
           <div className="hero-content text-center">
             <div>

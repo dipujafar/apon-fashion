@@ -12,7 +12,12 @@ const Brands = () => {
   }, []);
   return (
     <div className="mt-10 bg-gray-100 rounded pt-2">
-      <h1 className="text-center text-4xl text-orange-400 mb-5">
+      <h1
+        className="text-center text-4xl text-orange-400 mb-5"
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         Products Brands
       </h1>
       <div className="grid md:grid-cols-3 gap-5">
