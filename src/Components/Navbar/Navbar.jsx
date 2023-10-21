@@ -4,9 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import profile from "../../assets/images/user.png";
+import { useState } from "react";
 const Navbar = () => {
-  const { user, logOutUser, show, setShow } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOutUser } = useContext(AuthContext);
+  const [show, setShow] = useState(false);
 
   //logout function
   const handleLogout = () => {
@@ -103,8 +104,8 @@ const Navbar = () => {
                 <img src={profile} alt="" className="w-10 rounded-full" />
               )}
               <div
-                className={`absolute top-14 right-0 bg-blue-100 rounded space-y-2 py-4 w-52 items-center justify-center z-10    ${
-                  show || " -top-60 "
+                className={`absolute  right-0 bg-blue-100 rounded space-y-2 py-4 w-52 duration-1000 items-center justify-center z-10 ${
+                  show ? "top-14" : "-top-64"
                 }`}
               >
                 <div className="flex justify-center">

@@ -15,7 +15,7 @@ const Products = () => {
     setProducts(filteredProducts);
   }, [loadedProducts, brandName]);
   return (
-    <div className="mt-10 min-h-screen">
+    <div className="mt-10 min-h-screen bg-gray-100">
       <div className="carousel w-full mb-5">
         <div id="slide1" className="carousel-item relative w-full">
           <img

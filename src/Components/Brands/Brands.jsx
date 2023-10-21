@@ -11,7 +11,7 @@ const Brands = () => {
       .then((data) => setBrands(data));
   }, []);
   return (
-    <div className="mt-10">
+    <div className="mt-10 bg-gray-100 rounded pt-2">
       <h1 className="text-center text-4xl text-orange-400 mb-5">
         Products Brands
       </h1>
